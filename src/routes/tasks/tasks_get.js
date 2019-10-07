@@ -6,5 +6,7 @@ export default {
   options: {
     auth: "token"
   },
-  handler: (request, reply) => Task.getAll()
+  handler: (request, reply) => {
+    return Task.getAll(request.auth.credentials.id);
+  }
 };
